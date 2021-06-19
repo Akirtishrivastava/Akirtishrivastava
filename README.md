@@ -1,21 +1,24 @@
-import requests 
 
-from bs4 import BeautifulSoup as bs 
 
-  
+ 
+# Python program showing 
+# use of json package
+ 
 
-URL = 'https://www.Besthitter.org/page/1/'
+import json
+ 
+# {key:value mapping}
 
-  
+a ={"name":"John",
 
-req = requests.get(URL) 
+   "age":31,
 
-soup = bs(req.text, 'html.parser') 
+    "Salary":25000}
+ 
+# conversion to JSON done by dumps() function
 
-  
+ b = json.dumps(a)
+ 
+# printing the output
 
-titles = soup.find_all('div',attrs = {'class','head'}) 
-
-  
-
-print(titles[4].text) 
+print(b)
